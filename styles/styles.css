@@ -12,9 +12,10 @@ body {
 }
 
 :root {
-    --default-width: 60%;
+    --default-padding: 5rem;
     --h1-left: "principe img""section section";
     --h1-right: "img principe""section section";
+    --h1-center: "principe""img""section";
     --light-blue: #30A8FF;
     --light-yellow: #FFCB12;
 }
@@ -22,18 +23,19 @@ body {
 header {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
     width: 100%;
-    background-color: white;
 }
 
 header img {
-    width: 40%;
+    width: 10rem;
 }
 
 header nav {
     display: flex;
-    width: var(--default-width);
+    padding: 0 var(--default-padding);
+    background-color: white;
+    -webkit-animation: slide-down 1s ease-in-out;
 }
 
 nav ul {
@@ -44,16 +46,21 @@ nav ul {
 }
 
 #banner {
+    position: absolute;
     width: 100%;
     height: 15em;
     object-fit: cover;
+    z-index: -1;
 }
 
 main {
+    position: relative;
+    top: 150px;
     display: flex;
     flex-direction: column;
     gap: 4em;
-    width: var(--default-width);
+    padding: 0 var(--default-padding);
+    -webkit-animation: slide-down 1s ease-in-out;
 }
 
 article {
@@ -74,6 +81,7 @@ article>img {
     height: 100%;
     width: 100%;
     object-fit: cover;
+    -webkit-animation: slide-down 1.5s ease-in-out;
 }
 
 .principe {
@@ -96,16 +104,16 @@ section details:last-of-type {
     border: none;
 }
 
-#intro {
+#intro, #bedienbaar, #robuust {
     grid-template-areas: var(--h1-left);
 }
 
-#intro>.principe {
+#intro>section {
     background: rgb(246, 0, 179);
     background: linear-gradient(148deg, rgba(246, 0, 179, 1) 0%, rgba(213, 0, 80, 1) 100%);
 }
 
-#waarneembaar {
+#waarneembaar, #begrijpbaar {
     grid-template-areas: var(--h1-right);
 }
 
@@ -113,26 +121,40 @@ section details:last-of-type {
     background-color: var(--light-blue);
 }
 
-#bedienbaar {
-    grid-template-areas: var(--h1-left);
-}
-
 #bedienbaar>.principe {
     background-color: var(--light-yellow);
-}
-
-#begrijpbaar {
-    grid-template-areas: var(--h1-right);
 }
 
 #begrijpbaar>.principe {
     background-color: var(--light-blue);
 }
 
-#robuust {
-    grid-template-areas: var(--h1-left);
-}
-
 #robuust>.principe {
     background-color: var(--light-yellow);
 }
+
+@media only screen and (max-width: 700px) {
+    article {
+        display: grid;
+    grid-template: 12em 12em 1fr / 1fr;
+    gap: 2em;
+    }
+    #intro, #waarneembaar, #bedienbaar, #begrijpbaar, #robuust {
+        grid-template-areas: var(--h1-center);
+    }
+
+    :root {
+    --default-padding: 3rem;
+    }
+}
+
+@-webkit-keyframes slide-down {
+    0% {
+      transform: translateY(-2rem);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
