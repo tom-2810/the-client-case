@@ -1,160 +1,190 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0;
-    background-color: white;
+p {
+    font-size: large;
+    font-weight: 700;
 }
 
 :root {
-    --default-padding: 5rem;
-    --h1-left: "principe img""section section";
-    --h1-right: "img principe""section section";
-    --h1-center: "principe""img""section";
-    --light-blue: #30A8FF;
-    --light-yellow: #FFCB12;
+    --default-padding: 11vw;
+    --small-gap: 2px;
+    --medium-gap: 4px;
+    --large-gap: 3rem;
+    --c-light-pink: #FFE8E8;
+    --c-main-purple: linear-gradient(126deg, rgba(185, 0, 95, 1) 0%, rgba(227, 0, 89, 1) 100%);
 }
 
 header {
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; */
     width: 100%;
-}
-
-header img {
-    width: 10rem;
-}
-
-header nav {
-    display: flex;
-    padding: 0 var(--default-padding);
-    background-color: white;
-    -webkit-animation: slide-down 1s ease-in-out;
-}
-
-nav ul {
-    display: flex;
-    gap: 1em;
-    list-style: none;
-    margin-left: auto;
-}
-
-#banner {
-    position: absolute;
-    width: 100%;
-    height: 15em;
-    object-fit: cover;
-    z-index: -1;
 }
 
 main {
-    position: relative;
-    top: 150px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--large-gap);
+    height: 100vh;
+    padding: var(--large-gap) var(--default-padding) 800px var(--default-padding);
+}
+
+#top-nav {
+    padding: 0 var(--default-padding);
+    position: fixed;
+    background-color: white;
+    width: 100%;
+}
+
+#vervoerregioams-logo {
+    height: 5rem;
+}
+
+#banner {
+    width: 100%;
+    height: 25rem;
+    object-fit: cover;
+}
+
+#content {
     display: flex;
     flex-direction: column;
-    gap: 4em;
-    padding: 0 var(--default-padding);
-    -webkit-animation: slide-down 1s ease-in-out;
-}
-
-article {
-    display: grid;
-    grid-template: 12em 1fr / repeat(2, 1fr);
-    gap: 2em;
-}
-
-article>* {
-    border-radius: 16px;
-    padding: 1em;
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-article>img {
-    padding: 0;
-    grid-area: img;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    -webkit-animation: slide-down 1.5s ease-in-out;
+    gap: var(--large-gap);
+    max-width: 55rem;
 }
 
 .principe {
-    padding: 1em;
-    grid-area: principe;
+    scroll-margin-top: 6.5rem;
+}
+
+.principe h1 {
+    font-size: 2rem;
+    background: var(--c-main-purple);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#side-nav {
+    display: flex;
+    justify-content: end;
+    max-width: 30rem;
+    position: sticky;
+    top: 5rem;
+    height: fit-content;
+    overflow: hidden;
+}
+
+#side-nav h3 {
+    font-size: 1.5rem;
+    background: var(--c-main-purple);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#side-nav a {
+    color: black;
+    text-decoration: none;
+}
+
+#side-nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--medium-gap);
+    list-style: none;
+}
+
+#side-nav li {
+    padding: .5rem;
+    background-color: var(--c-light-pink);
+    width: calc(100% + 20px);
+}
+
+#side-nav li:hover {
+    transform: translateX(-20px);
+}
+
+#bottom-nav {
+    display: none;
+    background: var(--c-main-purple);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 1rem 0;
     color: white;
 }
 
-section {
-    padding: 0;
-    grid-area: section;
+#bottom-nav h3 {
+    padding: 0 var(--default-padding);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
 }
 
-section details {
-    padding: 1em;
-    border-bottom: 1px solid rgb(230, 230, 230);
+#bottom-nav ul {
+    display: flex;
+    padding: 0 var(--default-padding); 
+    justify-content: space-between;
+    height: 100%;
+    list-style: none;
 }
 
-section details:last-of-type {
-    border: none;
+#bottom-nav a {
+    color: white;
+    text-decoration: none;
 }
 
-#intro, #bedienbaar, #robuust {
-    grid-template-areas: var(--h1-left);
+.intro {
+    margin-bottom: 1rem;
 }
 
-#intro>section {
-    background: rgb(246, 0, 179);
-    background: linear-gradient(148deg, rgba(246, 0, 179, 1) 0%, rgba(213, 0, 80, 1) 100%);
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--small-gap);
 }
 
-#waarneembaar, #begrijpbaar {
-    grid-template-areas: var(--h1-right);
+.richtlijn {
+    background-color: var(--c-light-pink);
 }
 
-#waarneembaar>.principe {
-    background-color: var(--light-blue);
+.richtlijn[open] summary {
+    background: var(--c-main-purple);
+    color: white;
 }
 
-#bedienbaar>.principe {
-    background-color: var(--light-yellow);
+.richtlijn p {
+    padding: 1rem;
 }
 
-#begrijpbaar>.principe {
-    background-color: var(--light-blue);
+summary {
+    list-style: none;
 }
 
-#robuust>.principe {
-    background-color: var(--light-yellow);
+summary h2 {
+    padding: 1rem;
 }
 
-@media only screen and (max-width: 700px) {
-    article {
-        display: grid;
-    grid-template: 12em 12em 1fr / 1fr;
-    gap: 2em;
+@media only screen and (max-width: 1060px) {
+    main {
+        grid-template-columns: 1fr;
     }
-    #intro, #waarneembaar, #bedienbaar, #begrijpbaar, #robuust {
-        grid-template-areas: var(--h1-center);
+
+    #side-nav {
+        display: none;
     }
 
-    :root {
-    --default-padding: 3rem;
+    #bottom-nav {
+        display: block;
     }
 }
 
-@-webkit-keyframes slide-down {
-    0% {
-      transform: translateY(-2rem);
-      opacity: 0;
+@media only screen and (max-width: 675px) {
+    .principe h1 {
+        font-size: 1.8rem;
     }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
+
+    .richtlijn h2 {
+        font-size: 1.1rem;
     }
-  }
+}
