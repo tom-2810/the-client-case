@@ -26,7 +26,6 @@ main {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: var(--large-gap);
-    height: 100vh;
     padding: var(--large-gap) var(--default-padding) 100vh var(--default-padding);
 }
 
