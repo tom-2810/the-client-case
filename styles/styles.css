@@ -27,7 +27,7 @@ main {
     grid-template-columns: 2fr 1fr;
     gap: var(--large-gap);
     height: 100vh;
-    padding: var(--large-gap) var(--default-padding) 800px var(--default-padding);
+    padding: var(--large-gap) var(--default-padding) 100vh var(--default-padding);
 }
 
 #top-nav {
@@ -161,6 +161,10 @@ summary {
     list-style: none;
 }
 
+.richtlijn summary:hover {
+    cursor: pointer;
+}
+
 summary h2 {
     padding: 1rem;
 }
@@ -168,7 +172,6 @@ summary h2 {
 @media only screen and (max-width: 1060px) {
     main {
         grid-template-columns: 1fr;
-        padding-bottom: 100vh;
     }
 
     #side-nav {
