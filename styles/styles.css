@@ -1,89 +1,86 @@
-* {
-    margin: 0;
-    padding: 0;
+html {
+    scroll-behavior: smooth;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-p {
-    font-size: large;
-    font-weight: 700;
+:root {
+    --horizontal-spacing: 13vw;
+    --default-width: 95vw;
+    --max-width: 100rem;
+    --c-grijs: #ececec;
+    --c-main-purple: linear-gradient(123.52deg, #FF0053 0%, #CD0069 100%);
+    --small-gap: 8px;
+    --medium-gap: 1rem;
+    --large-gap: 5rem;
+    --xl-gap: 18rem;
 }
 
-:root {
-    --default-padding: 11vw;
-    --small-gap: 2px;
-    --medium-gap: 4px;
-    --large-gap: 3rem;
-    --c-light-pink: #FFE8E8;
-    --c-main-purple: linear-gradient(126deg, rgba(185, 0, 95, 1) 0%, rgba(227, 0, 89, 1) 100%);
+* {
+    scroll-margin: 10rem;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 200vh;
 }
 
 header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: sticky;
+    top: 0;
     width: 100%;
+    background-color: white;
 }
 
-main {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: var(--large-gap);
-    padding: var(--large-gap) var(--default-padding) 100vh var(--default-padding);
+h2, h3 {
+    font-size: 2em;
+    font-weight: bold;
+    background: var(--c-main-purple);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h5 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+.accent-paars {
+    background: var(--c-main-purple);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 #top-nav {
-    padding: 0 var(--default-padding);
-    position: fixed;
-    background-color: white;
-    width: 100%;
-}
-
-#vervoerregioams-logo {
-    height: 5rem;
-}
-
-#banner {
-    width: 100%;
-    height: 25rem;
-    object-fit: cover;
-}
-
-#content {
     display: flex;
-    flex-direction: column;
-    gap: var(--large-gap);
-    max-width: 55rem;
+    justify-content: space-between;
+    align-items: center;
+    width: var(--default-width);
+    max-width: var(--max-width);
 }
 
-.principe {
-    scroll-margin-top: 6.5rem;
-}
-
-.principe h1 {
-    font-size: 2rem;
-    background: var(--c-main-purple);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+#top-nav ul {
+    display: flex;
+    list-style: none;
+    gap: var(--medium-gap);
 }
 
 #side-nav {
-    display: flex;
-    justify-content: end;
-    max-width: 30rem;
     position: sticky;
-    top: 5rem;
-    height: fit-content;
-    overflow: hidden;
-}
-
-#side-nav h3 {
-    font-size: 1.5rem;
-    background: var(--c-main-purple);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-#side-nav a {
-    color: black;
-    text-decoration: none;
+    top: 8rem;
 }
 
 #side-nav ul {
@@ -94,100 +91,179 @@ main {
 }
 
 #side-nav li {
-    padding: .5rem;
-    background-color: var(--c-light-pink);
-    width: calc(100% + 20px);
+    background-color: white;
+    width: 25rem;
+    border-radius: 24px;
+    padding: var(--medium-gap);
+    transition: .5s;
 }
 
 #side-nav li:hover {
-    transform: translateX(-20px);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.07);
+    transform: scale(1.015);
 }
 
-#bottom-nav {
-    display: none;
-    background: var(--c-main-purple);
-    position: fixed;
-    left: 0;
-    bottom: 0;
+#side-nav li:hover img {
+    transform: scale(1.1);
+}
+
+#banner {
     width: 100%;
-    padding: 1rem 0;
-    color: white;
+    height: 13rem;
+    object-fit: cover;
 }
 
-#bottom-nav h3 {
-    padding: 0 var(--default-padding);
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-#bottom-nav ul {
-    display: flex;
-    padding: 0 var(--default-padding);
-    justify-content: space-between;
-    height: 100%;
-    list-style: none;
-}
-
-#bottom-nav a {
-    color: white;
-    text-decoration: none;
-}
-
-.intro {
-    margin-bottom: 1rem;
-}
-
-.info {
+main {
     display: flex;
     flex-direction: column;
-    gap: var(--small-gap);
+    width: var(--default-width);
+    max-width: var(--max-width);
+    gap: var(--xl-gap);
 }
 
-.richtlijn {
-    background-color: var(--c-light-pink);
+#welkom {
+    display: grid;
+    margin-top: var(--large-gap);
+    row-gap: var(--medium-gap);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
 }
 
-.richtlijn[open] summary {
+#slogan {
+    font-size: 6em;
+    font-weight: bolder;
+    line-height: 1em;
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+}
+
+#introductie {
+    font-size: 2em;
+    font-weight: 500;
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+}
+
+#weetje {
+    grid-column: 4 / 5;
+    grid-row: 1 / 2;
+    width: 23rem;
+}
+
+#welkom img {
+    position: relative;
+    top: var(--large-gap);
+    width: 85%;
+    margin-left: auto;
+    grid-column: 2 / 5;
+    grid-row: 1 / 4;
+    z-index: -1;
+}
+
+.beschrijving {
+    padding: var(--medium-gap);
+    font-size: 2em;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.07);
+    border-radius: 8px;
+}
+
+#begin-knop {
+    width: fit-content;
+    height: fit-content;
+    padding: .5em 1em;
     background: var(--c-main-purple);
     color: white;
+    border-radius: 6px;
+    font-size: 2em;
+    font-weight: 600;
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
 }
 
-.richtlijn p {
+#content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+    "principes principes principes navigatie";
+    padding: var(--medium-gap);
+    background-color: var(--c-grijs);
+    border-radius: 24px;
+    gap: var(--large-gap);
+}
+
+#principes {
+    display: flex;
+    flex-direction: column;
+    gap: var(--large-gap);
+    grid-area: principes;
+}
+
+#navigatie {
+    grid-area: navigatie;
+}
+
+.principe {
+    display: flex;
+    flex-direction: column;
+}
+
+.principe .inleiding {
     padding: 1rem;
+    font-size: 2rem;
+    background-color: white;
+    border-radius: 6px;
+    margin-bottom: var(--medium-gap);
 }
 
-summary {
-    list-style: none;
-}
-
-.richtlijn summary:hover {
-    cursor: pointer;
-}
-
-summary h2 {
+.tekst-blok {
     padding: 1rem;
+    font-size: 2rem;
+    background-color: white;
 }
 
-@media only screen and (max-width: 1060px) {
-    main {
-        grid-template-columns: 1fr;
-    }
-
-    #side-nav {
-        display: none;
-    }
-
-    #bottom-nav {
-        display: block;
-    }
+details[open] summary {
+    border-bottom: 2px solid var(--c-grijs);
 }
 
-@media only screen and (max-width: 675px) {
-    .principe h1 {
-        font-size: 1.8rem;
-    }
+.principe-link-content {
+    display: flex;
+    gap: var(--medium-gap);
+    line-height: 1.3rem;
+    align-items: center;
+}
 
-    .richtlijn h2 {
-        font-size: 1.1rem;
-    }
+.progressie {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--medium-gap);
+    align-items: center;
+    margin-top: var(--small-gap);
+}
+
+.principe-link-content img {
+    width: 4rem;
+    height: 4rem;
+    object-fit: contain;
+    transition: 1s;
+}
+
+.progressie p {
+    white-space: nowrap;
+}
+
+.progressie-balk, .voltooid {
+    background-color: var(--c-grijs);
+    height: .5rem;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.voltooid {
+    background-color: #CD0069;
+    width: 20%;
+}
+
+#navigatie h2 {
+    margin-bottom: var(--large-gap);
 }
