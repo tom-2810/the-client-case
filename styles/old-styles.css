@@ -1,0 +1,269 @@
+html {
+    scroll-behavior: smooth;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --horizontal-spacing: 13vw;
+    --default-width: 95vw;
+    --max-width: 100rem;
+    --c-grijs: #ececec;
+    --c-main-purple: linear-gradient(123.52deg, #FF0053 0%, #CD0069 100%);
+    --small-gap: 8px;
+    --medium-gap: 1rem;
+    --large-gap: 5rem;
+    --xl-gap: 18rem;
+}
+
+* {
+    scroll-margin: 10rem;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 200vh;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: white;
+}
+
+h2, h3 {
+    font-size: 2em;
+    font-weight: bold;
+    background: var(--c-main-purple);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h5 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+.accent-paars {
+    background: var(--c-main-purple);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: var(--default-width);
+    max-width: var(--max-width);
+}
+
+#top-nav ul {
+    display: flex;
+    list-style: none;
+    gap: var(--medium-gap);
+}
+
+#side-nav {
+    position: sticky;
+    top: 8rem;
+}
+
+#side-nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--medium-gap);
+    list-style: none;
+}
+
+#side-nav li {
+    background-color: white;
+    width: 25rem;
+    border-radius: 24px;
+    padding: var(--medium-gap);
+    transition: .5s;
+}
+
+#side-nav li:hover {
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.07);
+    transform: scale(1.015);
+}
+
+#side-nav li:hover img {
+    transform: scale(1.1);
+}
+
+#banner {
+    width: 100%;
+    height: 13rem;
+    object-fit: cover;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    width: var(--default-width);
+    max-width: var(--max-width);
+    gap: var(--xl-gap);
+}
+
+#welkom {
+    display: grid;
+    margin-top: var(--large-gap);
+    row-gap: var(--medium-gap);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+#slogan {
+    font-size: 6em;
+    font-weight: bolder;
+    line-height: 1em;
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+}
+
+#introductie {
+    font-size: 2em;
+    font-weight: 500;
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+}
+
+#weetje {
+    grid-column: 4 / 5;
+    grid-row: 1 / 2;
+    width: 23rem;
+}
+
+#welkom img {
+    position: relative;
+    top: var(--large-gap);
+    width: 85%;
+    margin-left: auto;
+    grid-column: 2 / 5;
+    grid-row: 1 / 4;
+    z-index: -1;
+}
+
+.beschrijving {
+    padding: var(--medium-gap);
+    font-size: 2em;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.07);
+    border-radius: 8px;
+}
+
+#begin-knop {
+    width: fit-content;
+    height: fit-content;
+    padding: .5em 1em;
+    background: var(--c-main-purple);
+    color: white;
+    border-radius: 6px;
+    font-size: 2em;
+    font-weight: 600;
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+}
+
+#content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+    "principes principes principes navigatie";
+    padding: var(--medium-gap);
+    background-color: var(--c-grijs);
+    border-radius: 24px;
+    gap: var(--large-gap);
+}
+
+#principes {
+    display: flex;
+    flex-direction: column;
+    gap: var(--large-gap);
+    grid-area: principes;
+}
+
+#navigatie {
+    grid-area: navigatie;
+}
+
+.principe {
+    display: flex;
+    flex-direction: column;
+}
+
+.principe .inleiding {
+    padding: 1rem;
+    font-size: 2rem;
+    background-color: white;
+    border-radius: 6px;
+    margin-bottom: var(--medium-gap);
+}
+
+.tekst-blok {
+    padding: 1rem;
+    font-size: 2rem;
+    background-color: white;
+}
+
+details[open] summary {
+    border-bottom: 2px solid var(--c-grijs);
+}
+
+.principe-link-content {
+    display: flex;
+    gap: var(--medium-gap);
+    line-height: 1.3rem;
+    align-items: center;
+}
+
+.progressie {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--medium-gap);
+    align-items: center;
+    margin-top: var(--small-gap);
+}
+
+.principe-link-content img {
+    width: 4rem;
+    height: 4rem;
+    object-fit: contain;
+    transition: 1s;
+}
+
+.progressie p {
+    white-space: nowrap;
+}
+
+.progressie-balk, .voltooid {
+    background-color: var(--c-grijs);
+    height: .5rem;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.voltooid {
+    background-color: #CD0069;
+    width: 20%;
+}
+
+#navigatie h2 {
+    margin-bottom: var(--large-gap);
+}
