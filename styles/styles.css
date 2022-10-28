@@ -4,8 +4,8 @@ html {
 }
 
 :root {
-    --default-width: 87vw;
-    --min-width: 71rem;
+    --default-width: 80vw;
+    --min-width: 60rem;
     --max-width: 100rem;
     --small-size: .5rem;
     --medium-size: 1.5rem;
@@ -14,14 +14,15 @@ html {
     --xxlarge-size: 8rem;
     --small-radius: 8px;
     --medium-radius: 16px;
-    --large-radius: 64px;
+    --large-radius: 32px;
     --c-achtergrond: #f3f3f3;
-    --c-schaduw: 0px 0px 40px rgba(0, 0, 0, 0.02);
+    --c-schaduw: 0px 0px 40px rgba(0, 0, 0, 0.025);
+    --c-schaduw-hover: 0px 0px 40px rgba(0, 0, 0, 0.075);
     --c-huistijl-magenta: linear-gradient(123.52deg, #FF0053 0%, #CD0069 100%);
 }
 
 * {
-    scroll-margin: 18rem;
+    scroll-margin: 14rem;
     margin: 0;
     padding: 0;
 }
@@ -44,7 +45,7 @@ header {
 main {
     display: flex;
     flex-direction: column;
-    gap: var(--xlarge-size);
+    gap: var(--large-size);
     width: var(--default-width);
     min-width: var(--min-width);
     max-width: var(--max-width);
@@ -130,18 +131,23 @@ main {
     font-weight: bold;
 }
 
-#begin {
+.knop:hover {
+    transform: scale(1.01);
+    box-shadow: var(--c-schaduw-hover);
+}
+
+.primair {
     background: var(--c-huistijl-magenta);
 }
 
-#meer {
+.secundair {
     color: #FF0053;
     border: 1px solid #FF0053;
 }
 
 #uitleg {
     display: grid;
-    width: 75%;
+    width: 80%;
     gap: var(--large-size);
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -160,6 +166,12 @@ main {
     background-color: white;
     box-shadow: var(--c-schaduw);
     border-radius: var(--large-radius);
+    transition: .5s;
+}
+
+.item:hover {
+    transform: scale(1.005);
+    box-shadow: var(--c-schaduw-hover);
 }
 
 .item .tekstueel-deel h3,
@@ -168,8 +180,10 @@ p {
 }
 
 .item img {
-    margin: auto;
-    width: 75%;
+    flex: 1 1 auto;
+    margin: 0 auto;
+    width: clamp(85%, -.5rem + 2vw, 95%);
+    object-fit: contain;
 }
 
 #toolgankelijk {
