@@ -8,20 +8,20 @@ html {
     --min-width: 71rem;
     --max-width: 100rem;
     --small-size: .5rem;
-    --medium-size: 1rem;
+    --medium-size: 1.5rem;
     --large-size: 2rem;
     --xlarge-size: 4rem;
     --xxlarge-size: 8rem;
     --small-radius: 8px;
     --medium-radius: 16px;
     --large-radius: 64px;
-    --c-achtergrond: #F8F8F8;
+    --c-achtergrond: #f3f3f3;
     --c-schaduw: 0px 0px 40px rgba(0, 0, 0, 0.02);
     --c-huistijl-magenta: linear-gradient(123.52deg, #FF0053 0%, #CD0069 100%);
 }
 
 * {
-    scroll-margin: 22rem;
+    scroll-margin: 18rem;
     margin: 0;
     padding: 0;
 }
@@ -48,7 +48,13 @@ main {
     width: var(--default-width);
     min-width: var(--min-width);
     max-width: var(--max-width);
-    margin: var(--xxlarge-size) 0;
+    margin: var(--xlarge-size) 0;
+}
+
+.accent-magenta {
+    background: var(--c-huistijl-magenta);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 #top-nav {
@@ -58,7 +64,7 @@ main {
     width: var(--default-width);
     min-width: var(--min-width);
     max-width: var(--max-width);
-    padding: var(--medium-size) 0;
+    /* padding: var(--medium-size) 0; */
     background-color: white;
 }
 
@@ -85,22 +91,28 @@ main {
     font-size: var(--xlarge-size);
 }
 
-#introductie p {
+#toelichting {
     font-size: var(--large-size);
-    margin-bottom: var(--xlarge-size);
+    width: 30rem;
+}
+
+#inleiding {
+    font-size: var(--medium-size);
+    margin-bottom: var(--xxlarge-size);
 }
 
 #illustratie {
     display: flex;
     justify-content: flex-end;
-    height: 60vh;
+    /* height: 60vh; */
     grid-column: 2 / 5;
     grid-row: 1;
+    width: 100%;
     z-index: -1;
 }
 
 #welkom img {
-    width: 82%;
+    width: 80%;
     object-fit: contain;
 }
 
@@ -129,8 +141,8 @@ main {
 
 #uitleg {
     display: grid;
-    width: 100%;
-    gap: var(--xlarge-size);
+    width: 75%;
+    gap: var(--large-size);
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
 }
@@ -144,14 +156,15 @@ main {
     flex-direction: column;
     justify-content: space-between;
     padding: var(--large-size);
-    /* aspect-ratio: 1/1; */
+    aspect-ratio: 1/1;
     background-color: white;
     box-shadow: var(--c-schaduw);
     border-radius: var(--large-radius);
 }
 
-.item .tekstueel-deel h3, p {
-    font-size: clamp(1.5rem, -0.1rem + 2vw, 2rem);
+.item .tekstueel-deel h3,
+p {
+    font-size: clamp(1rem, -0.5rem + 2vw, 2rem);
 }
 
 .item img {
