@@ -21,7 +21,7 @@ html {
 }
 
 * {
-    scroll-margin: 25rem;
+    scroll-margin: 23rem;
     margin: 0;
     padding: 0;
 }
@@ -83,7 +83,7 @@ main {
     max-height: 60rem;
     align-items: center;
     gap: var(--large-size);
-    margin-bottom: 30vh;
+    margin-bottom: 40vh;
 }
 
 #introductie {
@@ -99,7 +99,7 @@ main {
 
 #toelichting {
     font-size: var(--large-size);
-    width: 20rem;
+    width: 30rem;
 }
 
 #inleiding {
@@ -152,13 +152,9 @@ main {
 
 #uitleg {
     display: grid;
-    grid-template-columns: repeat(2, 50rem);
+    grid-template-columns: repeat(2, 45rem);
     grid-template-rows: repeat(3,1fr);
-    gap: var(--medium-size);
-}
-
-#uitleg h2 {
-
+    gap: var(--large-size);
 }
 
 .item {
@@ -176,7 +172,7 @@ main {
 }
 
 .item h3, p {
-    font-size: var(--medium-size);
+    font-size: var(--large-size);
 }
 
 .item:hover {
@@ -191,31 +187,41 @@ main {
 }
 
 .tekstueel-deel {
-    flex: 0 1 auto;
+    flex: 1 1 auto;
 }
 
 #toolgankelijk {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     grid-column: span 2;
     aspect-ratio: initial;
 }
 
+#toolgankelijk ol {
+    font-size: var(--medium-size);
+    list-style: inside;
+    list-style-type: decimal;
+}
+
 #toolgankelijk img {
     margin: auto;
+    width: 100%;
 }
 
-@media only screen and (max-width: 1777px) {
+@media only screen and (max-width: 1650px) {
     #uitleg {
-        grid-template-columns: repeat(2, 40rem);
+        grid-template-columns: repeat(2, 1fr);
     }
     #toolgankelijk img {
-        width: 20rem;
+        height: 25rem;
+    }
+    .item h3, p {
+        font-size: var(--medium-size);
     }
 }
 
 
-@media only screen and (max-width: 1390px) {
+@media only screen and (max-width: 1120px) {
     #top-nav {
         width: 90vw;
     }
@@ -228,11 +234,9 @@ main {
         display: flex;
         flex-direction: column-reverse;
         gap: var(--large-size);
-        margin-bottom: 25vh;
         grid-template-columns: 1fr;
         grid-template-rows: repeat(4, 1fr);
         align-items: flex-start;
-        width: 100%;
     }
 
     #introductie {
@@ -242,19 +246,17 @@ main {
     #welkom img {
     grid-column: 1;
     grid-row: 1;
-
-    margin: 0;
-    width: 100%;
+    width: 85%;
     margin: 0 auto;
     }
 
     #slogan {
-        font-size: 2rem;
-        width: 20rem;
+        font-size: var(--large-size);
+        width: 18rem;
     }
 
     #top-nav img {
-        width: 10rem;
+        width: 11rem;
     }
 
     .knoppen {
@@ -267,8 +269,6 @@ main {
 
     #uitleg {
         grid-template-columns: 1fr;
-    grid-template-rows: repeat(6,42rem);
-
     }
 
     .item {
@@ -280,7 +280,6 @@ main {
         flex-direction: column;
         grid-column: span 1;
         grid-row: span 2;
-        height: 50rem;
     }
 
     #toolgankelijk img {
@@ -290,6 +289,11 @@ main {
 
     #inleiding {
         font-size: var(--medium-size);
+        width: 100%;
+    }
+
+    #toelichting {
+        width: 100%;
     }
 
 }
