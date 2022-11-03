@@ -35,10 +35,12 @@ body {
 }
 
 header {
+    position: fixed;
     display: flex;
     justify-content: center;
     width: 100%;
     background-color: white;
+    z-index: 2;
 }
 
 main {
@@ -171,7 +173,7 @@ main {
     padding: var(--large-size);
 }
 
-.item h3, p {
+.item h3, .item p {
     font-size: var(--large-size);
 }
 
@@ -215,7 +217,7 @@ main {
     #toolgankelijk img {
         height: 25rem;
     }
-    .item h3, p {
+    .item h3, .item p {
         font-size: var(--medium-size);
     }
 }
