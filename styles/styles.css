@@ -230,7 +230,7 @@ main {
     main {
         justify-content: flex-start;
         width: 90vw;
-        margin: var(--large-size) 0;
+        margin: var(--xxlarge-size) 0;
     }
     #welkom {
         display: flex;
